@@ -8,7 +8,7 @@ Versão **0.1.0**, experimental. Projeto independente, sem vínculo com o Lights
 
 ## Usar a release
 
-Baixe `MinhaCaptura-v0.1.0-win-x64.zip` na seção Releases do repositório, extraia e execute `MinhaCaptura.exe`. Essa distribuição inclui o runtime e não exige instalar o .NET. Destinada a Windows x64 compatível com .NET 10. O aplicativo ainda não possui assinatura digital.
+Baixe `ligthscreenshot-v0.1.0-win-x64.zip` na seção Releases do repositório, extraia e execute `ligthscreenshot.exe`. Essa distribuição inclui o runtime e não exige instalar o .NET. Destinada a Windows x64 compatível com .NET 10. O aplicativo ainda não possui assinatura digital.
 
 ## Executar
 
