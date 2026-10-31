@@ -26,7 +26,7 @@
       "icon": "assets/icon.png",
       "category": "public.app-category.productivity",
       "target": ["zip", "dmg"],
-      "identity": null,
+      "identity": "-",
       "extendInfo": { "NSScreenCaptureUsageDescription": "Selecione uma área da tela para anotar e salvar localmente." }
     },
     "linux": {

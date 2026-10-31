@@ -56,6 +56,12 @@ jobs:
       - name: Checksums
         shell: bash
         run: node scripts/checksums.cjs
+      - name: Testar pacote Linux
+        if: runner.os == 'Linux'
+        run: xvfb-run -a node scripts/packaged-smoke.cjs
+      - name: Testar pacote Windows e macOS
+        if: runner.os != 'Linux'
+        run: node scripts/packaged-smoke.cjs
       - uses: actions/upload-artifact@v4
         with:
           name: ligthscreenshot-${{ matrix.target }}
