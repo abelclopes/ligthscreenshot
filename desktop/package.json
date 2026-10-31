@@ -4,6 +4,8 @@
   "description": "Captura de tela local com anotações para Windows, Linux e macOS",
   "author": "Abel Lopes <abellopes@gmail.com>",
   "license": "MIT",
+  "homepage": "https://abelclopes.github.io/ligthscreenshot/",
+  "repository": { "type": "git", "url": "https://github.com/abelclopes/ligthscreenshot.git", "directory": "desktop" },
   "main": "main.cjs",
   "desktopName": "io.github.abelclopes.ligthscreenshot.desktop",
   "scripts": {
