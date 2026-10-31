@@ -3,53 +3,90 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ligthscreenshot: captura de tela para Windows, com anotações, atalho configurável e código aberto. Sem upload de imagens pelo aplicativo.">
-  <meta name="theme-color" content="#087fce">
-  <title>ligthscreenshot — capture, anote, salve.</title>
+  <meta name="description" content="Capture uma área da tela, anote e salve localmente. Conheça o ligthscreenshot, gratuito e de código aberto, para Windows, Linux e macOS.">
+  <meta name="theme-color" content="#10151f">
+  <meta property="og:title" content="ligthscreenshot — direto ao ponto da sua tela.">
+  <meta property="og:description" content="Capturas com anotações, atalhos configuráveis e código aberto. Escolha a versão para o seu sistema.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://abelclopes.github.io/ligthscreenshot/">
+  <title>ligthscreenshot — direto ao ponto da sua tela.</title>
   <link rel="icon" href="icon.png" type="image/png">
-  <style>
-    :root{color-scheme:dark;--bg:#0a1018;--panel:#111d2b;--ink:#edf4fb;--muted:#a6b7ca;--blue:#67c9ff;--line:#27384c}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--blue);text-underline-offset:4px}a:focus-visible{outline:3px solid #fff;outline-offset:6px}button,a{-webkit-tap-highlight-color:transparent}.wrap{max-width:1120px;margin:auto;padding:0 28px}header{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:28px;padding-bottom:28px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--ink);text-decoration:none}.brand img{width:36px;height:36px}nav{display:flex;gap:24px}nav a{font-size:14px;color:var(--muted)}.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;padding:90px 0 80px}.tag{display:inline-block;color:var(--blue);font-size:13px;letter-spacing:.1em;text-transform:uppercase}h1{font-size:clamp(44px,6vw,72px);line-height:1.08;letter-spacing:-.045em;margin:22px 0}h1 span{color:var(--blue)}p{color:var(--muted)}.lead{max-width:540px;font-size:19px}.actions{display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-top:30px}.primary{background:#8ed8ff;color:#092032;border-radius:8px;padding:13px 22px;font-weight:700;text-decoration:none}.primary:hover{background:#bde9ff}.secondary{font-size:15px}.small{font-size:13px}.illustration{position:relative;min-height:320px;border:1px solid #31506e;border-radius:16px;background:linear-gradient(140deg,#152b40,#101923);padding:24px;box-shadow:0 30px 80px #0005}.dots{display:flex;gap:6px}.dots i{width:7px;height:7px;border-radius:50%;background:#48637b}.mocklines{margin:40px 0;display:grid;gap:18px}.mocklines i{height:10px;background:#233c52;border-radius:4px;width:80%}.mocklines i:nth-child(2){width:55%}.selection{position:absolute;inset:80px 35px 65px 65px;border:2px dashed var(--blue);background:#66c9ff0a;display:grid;place-items:center}.selection img{width:90px;height:90px;filter:drop-shadow(0 10px 18px #0004)}.selection:before,.selection:after{content:"";width:8px;height:8px;background:white;position:absolute}.selection:before{left:-5px;top:-5px}.selection:after{right:-5px;bottom:-5px}.caption{position:absolute;bottom:16px;left:24px;font-size:12px;color:var(--muted)}section{padding:52px 0;border-top:1px solid var(--line)}h2{font-size:30px;letter-spacing:-.025em;margin:0 0 28px}h3{font-size:19px;margin:0 0 8px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:26px}.card p{font-size:15px;margin-bottom:0}.number{font-size:13px;color:var(--blue);display:block;margin-bottom:18px}.steps{padding-left:24px;color:var(--muted)}.steps li{padding:8px 0 8px 8px}.steps strong{color:var(--ink)}code,kbd{font:14px ui-monospace,monospace;background:#1e3043;padding:3px 6px;border-radius:4px;overflow-wrap:anywhere}.split{display:grid;grid-template-columns:1fr 1fr;gap:60px}.note{border-left:2px solid var(--blue);padding-left:20px;font-size:15px}footer{padding:32px 0 42px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:13px}footer a{color:var(--muted)}@media(max-width:780px){.hero{grid-template-columns:1fr;gap:36px;padding-top:52px}.illustration{min-height:280px}.cards,.split{grid-template-columns:1fr;gap:18px}nav{gap:14px}nav a{font-size:13px}.wrap{padding:0 20px}header{flex-wrap:wrap}footer{flex-direction:column}h1{font-size:52px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <a class="brand" href="./"><img src="icon.png" alt="" width="36" height="36">ligthscreenshot</a>
-    <nav aria-label="Menu principal"><a href="#recursos">Recursos</a><a href="#comecar">Como usar</a><a href="https://github.com/abelclopes/ligthscreenshot">GitHub ↗</a></nav>
-  </header>
-  <main>
-    <div class="hero">
-      <div>
-        <span class="tag">Windows · Código aberto · v0.1.0</span>
-        <h1>Capture a ideia.<br><span>Marque o detalhe.</span></h1>
-        <p class="lead">Selecione uma área da tela, adicione suas anotações e salve. Um aplicativo discreto na bandeja, pronto no seu atalho.</p>
-        <div class="actions"><a class="primary" href="https://github.com/abelclopes/ligthscreenshot/releases/download/v0.1.0/ligthscreenshot-v0.1.0-win-x64.zip">Baixar para Windows x64 ↓</a><a class="secondary" href="https://github.com/abelclopes/ligthscreenshot/releases/tag/v0.1.0">Notas da versão</a></div>
-        <p class="small">Gratuito · Licença MIT · Runtime .NET incluído</p>
-      </div>
-      <div class="illustration" role="img" aria-label="Ilustração de uma área de captura selecionada na tela">
-        <div class="dots"><i></i><i></i><i></i></div><div class="mocklines"><i></i><i></i><i></i><i></i></div>
-        <div class="selection"><img src="icon.png" alt="" width="90" height="90"></div><span class="caption">Selecione. Anote. Salve. — Ilustração</span>
-      </div>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="header wrap">
+  <a class="brand" href="./" aria-label="ligthscreenshot, início"><img src="icon.png" alt="" width="34" height="34">ligth<span>screenshot</span></a>
+  <nav aria-label="Navegação principal"><a href="#recursos">Recursos</a><a href="#downloads">Downloads</a><a href="#duvidas">Dúvidas</a></nav>
+  <a class="github" href="https://github.com/abelclopes/ligthscreenshot">Código no GitHub <span aria-hidden="true">↗</span></a>
+</header>
+<main id="conteudo">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> Uma tecla. Uma ideia bem explicada.</p>
+      <h1 id="hero-title">Direto ao ponto<br>da sua <span>tela.</span></h1>
+      <p class="intro">Capture o que importa, marque o detalhe e compartilhe do seu jeito. Sem enviar suas imagens para um servidor.</p>
+      <div class="hero-actions"><a class="button primary" href="#downloads">Escolher meu download <span aria-hidden="true">↓</span></a><a class="text-link" href="#demonstracao">Veja como funciona <span aria-hidden="true">↗</span></a></div>
+      <div class="hero-facts"><span>Gratuito</span><span>Código aberto</span><span>Windows · Linux · Mac</span></div>
     </div>
-    <section id="multiplataforma" class="split">
-      <div><span class="tag">Nova prévia · v0.2.0</span><h2>Também no Linux e no Mac.</h2><p>A edição multiplataforma oferece captura, seleção de área na imagem, anotações e atalho configurável. Disponível para Linux x64, macOS Intel, Apple Silicon e Windows x64.</p><a class="primary" href="https://github.com/abelclopes/ligthscreenshot/releases/tag/v0.2.0">Ver pacotes da prévia →</a></div>
-      <div><h3>Escolha o pacote do seu sistema</h3><p>Linux: AppImage, DEB ou TAR.GZ. Mac: DMG ou ZIP, com <code>arm64</code> para Apple Silicon e <code>x64</code> para Intel. Windows: executável portátil.</p><p class="small">Versão experimental. No macOS, autorize Gravação de Tela; o aplicativo ainda não tem assinatura Developer ID nem notarização. No Linux Wayland, captura e atalhos dependem dos portais do desktop. Consulte as notas da prévia antes de instalar.</p></div>
-    </section>
-    <section id="recursos">
-      <h2>O essencial, ao alcance de uma tecla.</h2>
-      <div class="cards">
-        <article class="card"><span class="number">01 / CAPTURE</span><h3>Seu próprio atalho</h3><p>Use Print Screen ou configure uma combinação com Ctrl, Alt, Shift e Win. Arraste para selecionar a área desejada.</p></article>
-        <article class="card"><span class="number">02 / ANOTE</span><h3>Mostre o que importa</h3><p>Adicione setas, retângulos, desenho livre e texto. Escolha a cor e desfaça quando precisar.</p></article>
-        <article class="card"><span class="number">03 / SALVE</span><h3>A imagem fica com você</h3><p>Salve em PNG ou copie para a área de transferência. O aplicativo não faz upload das suas capturas.</p></article>
+    <div class="demo" id="demonstracao">
+      <div class="demo-chrome"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>uma imagem vale uma boa anotação</span><span aria-hidden="true">↗</span></div>
+      <div class="demo-paper">
+        <div class="paper-header"><span class="paper-logo" aria-hidden="true">◈</span><span>Seu próximo projeto</span><span class="paper-tag">Em andamento</span></div>
+        <div class="paper-content"><span class="paper-overline">Visão geral</span><h2>É aqui que a ideia começa.</h2><p>Um detalhe faz toda a diferença.</p><div class="paper-stats"><div><span>Etapas concluídas</span><strong>12 <small>/ 16</small></strong></div><div class="mini-chart" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="paper-progress"><i></i></div></div>
+        <svg class="annotation" viewBox="0 0 500 320" aria-hidden="true">
+          <defs><marker id="arrow-head" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
+          <g class="demo-mark" data-mark="arrow"><path d="M394 98 Q440 158 367 210" marker-end="url(#arrow-head)"/><path d="M310 88 Q350 72 389 88" stroke-width="2"/></g>
+          <g class="demo-mark" data-mark="rectangle"><rect x="48" y="163" width="399" height="103" rx="5"/></g>
+          <g class="demo-mark" data-mark="text"><rect x="217" y="70" width="211" height="43" rx="6" fill="#fff3d5" stroke="none"/><text x="231" y="98" stroke="none" fill="#af460b">Olha esse detalhe!</text></g>
+          <g class="demo-mark" data-mark="pen"><path d="M62 126 Q145 142 266 127 M66 136 Q155 149 261 136"/></g>
+        </svg>
+        <span class="crop-corner top-left" aria-hidden="true"></span><span class="crop-corner bottom-right" aria-hidden="true"></span>
       </div>
-    </section>
-    <section id="comecar" class="split">
-      <div><h2>Pronto em três passos.</h2><ol class="steps"><li><strong>Baixe e extraia o ZIP.</strong><br>Abra <code>ligthscreenshot.exe</code>. Não é necessário instalar o .NET.</li><li><strong>Encontre o ícone na bandeja.</strong><br>Ele pode estar entre os ícones ocultos, ao lado do relógio.</li><li><strong>Pressione <kbd>Print Screen</kbd>.</strong><br>Selecione a área, faça suas anotações e copie ou salve.</li></ol><p class="small">Para trocar o atalho: botão direito no ícone → Configurações. Para encerrar: Sair.</p></div>
-      <div><h2>Simples e transparente.</h2><p>O código está disponível para você inspecionar, modificar e compartilhar. Projeto independente, sem vínculo com o Lightshot.</p><p class="note">Versão experimental para Windows x64 compatível com .NET 10. O executável ainda não tem assinatura digital. A interação gráfica precisa de validação manual.</p><p class="small">Copiar usa a área de transferência do Windows. Histórico e sincronização dependem das configurações do sistema. Outro aplicativo pode ocupar o atalho; nesse caso, escolha uma nova combinação em Configurações.</p><a href="https://github.com/abelclopes/ligthscreenshot/releases/download/v0.1.0/ligthscreenshot-v0.1.0-win-x64.zip.sha256">Baixar checksum SHA-256</a></div>
-    </section>
-  </main>
-  <footer><span>ligthscreenshot · Feito por Abel Lopes e colaboradores</span><div><a href="https://github.com/abelclopes/ligthscreenshot/blob/main/LICENSE">Licença MIT</a> · <a href="https://github.com/abelclopes/ligthscreenshot/issues">Relatar um problema</a></div></footer>
-</div>
+      <div class="demo-bottom"><div class="demo-tools" role="group" aria-label="Experimentar uma anotação na ilustração"><button type="button" data-tool="arrow" aria-pressed="true" aria-label="Mostrar seta">↗</button><button type="button" data-tool="rectangle" aria-pressed="false" aria-label="Mostrar retângulo">□</button><button type="button" data-tool="text" aria-pressed="false" aria-label="Mostrar texto">T</button><button type="button" data-tool="pen" aria-pressed="false" aria-label="Mostrar desenho livre">✎</button></div><span id="demo-label" aria-live="polite">Uma seta resolve.</span><span class="color-dot" aria-hidden="true"></span></div>
+      <p class="demo-caption">Demonstração ilustrativa · experimente as ferramentas acima</p>
+    </div>
+  </section>
+  <div class="promise-bar"><div class="wrap"><span><span aria-hidden="true">⌘</span> Seu atalho, sua escolha</span><span><span aria-hidden="true">↳</span> Imagens salvas localmente</span><span><span aria-hidden="true">{ }</span> Código disponível para inspecionar</span></div></div>
+  <section class="section wrap" id="recursos" aria-labelledby="features-title">
+    <div class="section-heading"><div><p class="eyebrow">Menos passos, mais clareza</p><h2 id="features-title">Do print à explicação.<br>Sem complicar.</h2></div><p>Um aplicativo que fica por perto e aparece quando você precisa.</p></div>
+    <div class="features">
+      <article><span class="feature-icon" aria-hidden="true">⌗</span><span class="index">01</span><h3>Escolha só o essencial.</h3><p>Selecione a área que você quer mostrar. Uma conversa, um erro, uma referência. O resto fica de fora.</p></article>
+      <article><span class="feature-icon orange" aria-hidden="true">↗</span><span class="index">02</span><h3>Deixe o detalhe claro.</h3><p>Setas, retângulos, texto e desenho livre. Escolha a cor, faça sua anotação e desfaça quando precisar.</p></article>
+      <article><span class="feature-icon green" aria-hidden="true">↓</span><span class="index">03</span><h3>Salve. Copie. Pronto.</h3><p>Exporte em PNG ou copie para colar onde quiser. O aplicativo não faz upload das suas capturas.</p></article>
+    </div>
+  </section>
+  <section class="download-section" id="multiplataforma" aria-labelledby="downloads">
+    <div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">Escolha a sua versão</p><h2 id="downloads">Na sua tela.<br>No seu sistema.</h2></div><p>Sem conta e sem assinatura. Os pacotes incluem o necessário para executar o aplicativo.</p></div>
+      <div class="platform-tabs" aria-label="Sistema operacional"><button type="button" data-platform="windows">⊞ <span>Windows</span></button><button type="button" data-platform="linux">⌁ <span>Linux</span></button><button type="button" data-platform="mac">⌘ <span>macOS</span></button></div>
+      <div class="platform-panel" id="panel-windows" data-panel="windows">
+        <div class="platform-info"><span class="badge">Edição original · v0.1.0</span><h3>Windows, do jeito que começou.</h3><p>Captura com seleção diretamente na tela, editor de anotações e ícone na bandeja. Para Windows x64.</p><a class="button primary" href="https://github.com/abelclopes/ligthscreenshot/releases/download/v0.1.0/ligthscreenshot-v0.1.0-win-x64.zip">Baixar ZIP para Windows <span aria-hidden="true">↓</span></a><p class="download-meta">Extraia e abra <code>ligthscreenshot.exe</code>. .NET incluído.</p></div>
+        <div class="platform-side"><span class="badge preview">Também disponível · prévia v0.2.0</span><h4>A nova edição multiplataforma.</h4><p>Seleção de área sobre a imagem capturada e a mesma base usada no Linux e no Mac.</p><a class="package-link" href="https://github.com/abelclopes/ligthscreenshot/releases/download/v0.2.0/ligthscreenshot-v0.2.0-win-x64.exe">Baixar executável portátil x64 <span aria-hidden="true">↗</span></a><a class="small-link" href="https://github.com/abelclopes/ligthscreenshot/releases/tag/v0.1.0">Notas e checksum da v0.1.0</a></div>
+      </div>
+      <div class="platform-panel" id="panel-linux" data-panel="linux">
+        <div class="platform-info"><span class="badge preview">Prévia multiplataforma · v0.2.0</span><h3>Um novo espaço no seu desktop.</h3><p>Para Linux x64. Use o DEB em Debian/Ubuntu compatíveis ou escolha uma distribuição portátil.</p><div class="package-list"><a class="package-link" href="https://github.com/abelclopes/ligthscreenshot/releases/download/v0.2.0/ligthscreenshot-v0.2.0-linux-amd64.deb">Pacote DEB <span>Debian / Ubuntu ↗</span></a><a class="package-link" href="https://github.com/abelclopes/ligthscreenshot/releases/download/v0.2.0/ligthscreenshot-v0.2.0-linux-x86_64.AppImage">AppImage <span>Portátil ↗</span></a><a class="package-link" href="https://github.com/abelclopes/ligthscreenshot/releases/download/v0.2.0/ligthscreenshot-v0.2.0-linux-x64.tar.gz">Arquivo TAR.GZ <span>Extração manual ↗</span></a></div></div>
+        <div class="platform-side"><h4>Uma nota sobre o desktop.</h4><p>No Wayland, captura e atalhos dependem dos portais do sistema. Pode aparecer uma solicitação para escolher a tela ou autorizar o atalho.</p><p>AppImage pode exigir FUSE. No GNOME, a bandeja pode precisar de AppIndicator. O botão Nova captura também fica disponível na janela.</p><a class="small-link" href="https://github.com/abelclopes/ligthscreenshot/blob/main/desktop/README.md">Requisitos e instruções para Linux ↗</a></div>
+      </div>
+      <div class="platform-panel" id="panel-mac" data-panel="mac">
+        <div class="platform-info"><span class="badge preview">Prévia multiplataforma · v0.2.0</span><h3>Seu próximo print no Mac.</h3><p>Escolha de acordo com o processador. O arquivo DMG contém o aplicativo para copiar para Aplicativos.</p><div class="package-list"><a class="package-link" href="https://github.com/abelclopes/ligthscreenshot/releases/download/v0.2.0/ligthscreenshot-v0.2.0-mac-arm64.dmg">Apple Silicon <span>Chip Apple · DMG ↗</span></a><a class="package-link" href="https://github.com/abelclopes/ligthscreenshot/releases/download/v0.2.0/ligthscreenshot-v0.2.0-mac-x64.dmg">Intel <span>Processador Intel · DMG ↗</span></a></div><p class="download-meta">Versões ZIP também disponíveis nas <a href="https://github.com/abelclopes/ligthscreenshot/releases/tag/v0.2.0">notas da prévia</a>.</p></div>
+        <div class="platform-side"><h4>Antes da primeira captura.</h4><p>Autorize Gravação de Tela em Ajustes do Sistema → Privacidade e Segurança e reinicie o aplicativo.</p><p>Os pacotes ainda não têm assinatura Developer ID nem notarização. O Gatekeeper pode impedir a abertura. Atalho padrão: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>.</p><a class="small-link" href="https://github.com/abelclopes/ligthscreenshot/blob/main/desktop/README.md">Instruções para macOS ↗</a></div>
+      </div>
+      <div class="release-note"><span aria-hidden="true">ⓘ</span><p>O projeto é experimental. A v0.2.0 passou por testes automatizados nos quatro destinos; permissões, captura real e integração com cada desktop ainda precisam de validação manual. <a href="https://github.com/abelclopes/ligthscreenshot/releases/tag/v0.2.0">Notas completas</a> · <a href="https://github.com/abelclopes/ligthscreenshot/releases/download/v0.2.0/SHA256SUMS.txt">Checksums SHA-256</a></p></div>
+    </div>
+  </section>
+  <section class="section wrap getting-started" id="comecar" aria-labelledby="start-title"><div><p class="eyebrow">Seu primeiro print</p><h2 id="start-title">Baixou?<br>Já pode começar.</h2><p class="section-intro">Na bandeja do Windows e Linux ou na barra de menus do Mac. Um lugar discreto, sempre à mão.</p><div class="shortcut-card"><span>Seu atalho pode ser assim</span><div><kbd>Ctrl</kbd><b>+</b><kbd>Shift</kbd><b>+</b><kbd>S</kbd></div><p>Troque a combinação em Configurações.</p></div></div><ol class="steps"><li><span>01</span><div><h3>Abra a versão do seu sistema.</h3><p>No Windows, extraia o ZIP ou abra o executável portátil. No Mac, copie o app do DMG. No Linux, instale ou extraia o pacote escolhido.</p></div></li><li><span>02</span><div><h3>Inicie uma captura.</h3><p>Use Print Screen no Windows/Linux ou Ctrl + Shift + S no Mac. Você também pode usar Nova captura no menu do ícone ou na janela da prévia.</p></div></li><li><span>03</span><div><h3>Selecione, anote e salve.</h3><p>Na edição original, selecione sobre a tela. Na prévia, selecione na imagem capturada. Depois adicione suas marcações e copie ou salve em PNG.</p></div></li></ol></section>
+  <section class="open-source"><div class="wrap open-source-inner"><div class="code-symbol" aria-hidden="true">{ }</div><div><p class="eyebrow">Aberto para você conferir</p><h2>Suas capturas.<br>Suas escolhas.</h2><p>Você pode ler o código, modificar e compartilhar. Sem upload, telemetria ou atualizador automático implementado no aplicativo.</p><a class="text-link" href="https://github.com/abelclopes/ligthscreenshot">Explore o código no GitHub <span aria-hidden="true">↗</span></a></div><span class="license-stamp">MIT<br><small>OPEN SOURCE</small></span></div></section>
+  <section class="section wrap faq" id="duvidas" aria-labelledby="faq-title"><div><p class="eyebrow">Antes de capturar</p><h2 id="faq-title">Alguma dúvida?</h2><p>Encontrou um problema?<br><a href="https://github.com/abelclopes/ligthscreenshot/issues">Conte nas Issues do projeto ↗</a></p></div><div class="questions">
+    <details><summary>É gratuito? Precisa de conta?</summary><p>É gratuito, sob licença MIT, e não exige conta para usar. Os downloads são hospedados nas releases do GitHub.</p></details>
+    <details><summary>Minhas imagens são enviadas para algum lugar?</summary><p>O aplicativo não faz upload das capturas. Elas ficam em memória até você salvar ou copiar. Ao copiar, histórico e sincronização da área de transferência dependem das configurações do seu sistema.</p></details>
+    <details><summary>Por que existem duas versões para Windows?</summary><p>A v0.1.0 é a edição original, em Windows Forms. A v0.2.0 é uma nova edição em Electron, compartilhada com Linux e macOS. Na prévia, o recorte acontece na imagem capturada. Ambas são experimentais; consulte as notas para escolher.</p></details>
+    <details><summary>E se o atalho não funcionar?</summary><p>Outra ferramenta pode estar usando a tecla. Abra Configurações e tente outra combinação. No Windows, confira a opção de Print Screen em Acessibilidade → Teclado. No Wayland, confirme a autorização de atalhos no seu desktop. O botão Nova captura continua sendo uma alternativa.</p></details>
+    <details><summary>Como descubro qual versão baixar para meu Mac?</summary><p>Abra o menu Apple → Sobre Este Mac. Se aparecer um chip Apple, escolha Apple Silicon (arm64). Se aparecer um processador Intel, escolha Intel (x64). Autorize a gravação de tela antes de capturar.</p></details>
+    <details><summary>É o mesmo projeto do Lightshot?</summary><p>Não. O ligthscreenshot é um projeto independente, sem vínculo com o Lightshot, criado por Abel Lopes e colaboradores.</p></details>
+  </div></section>
+</main>
+<footer class="footer wrap"><a class="brand" href="./"><img src="icon.png" alt="" width="28" height="28">ligth<span>screenshot</span></a><p>Feito por Abel Lopes e colaboradores.</p><div><a href="https://github.com/abelclopes/ligthscreenshot/blob/main/LICENSE">Licença MIT</a><a href="https://github.com/abelclopes/ligthscreenshot">GitHub ↗</a></div></footer>
 </body>
 </html>
