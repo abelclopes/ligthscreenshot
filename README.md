@@ -1,4 +1,4 @@
-# Minha Captura
+# ligthscreenshot
 
 Aplicativo Windows em C# / .NET 10, sem pacotes externos e sem chamadas de rede no código do aplicativo.
 
@@ -18,7 +18,7 @@ O aplicativo inicia na bandeja de ícones ao lado do relógio, sem janela princi
 
 Arraste para selecionar uma área (inclusive em vários monitores) e solte. Esc cancela a seleção. No editor, escolha seta, retângulo, caneta ou texto. Use **Cor**, **Desfazer**, **Copiar** ou **Salvar PNG**. A imagem é exibida em tamanho original, com barras de rolagem quando necessário. Fechar o editor mantém o aplicativo na bandeja. Durante a seleção ou edição, novas solicitações de captura são ignoradas.
 
-Se outro aplicativo já tiver registrado Print Screen, uma notificação informa o conflito. Feche esse aplicativo e reinicie Minha Captura. Se a tecla abrir a Ferramenta de Captura do Windows, desative a opção de usar Print Screen para captura em **Configurações > Acessibilidade > Teclado** e reinicie Minha Captura. O aplicativo não altera essa configuração. Apenas uma instância do aplicativo é permitida por sessão.
+Se outro aplicativo já tiver registrado Print Screen, uma notificação informa o conflito. Feche esse aplicativo e reinicie o ligthscreenshot. Se a tecla abrir a Ferramenta de Captura do Windows, desative a opção de usar Print Screen para captura em **Configurações > Acessibilidade > Teclado** e reinicie o ligthscreenshot. O aplicativo não altera essa configuração. Apenas uma instância do aplicativo é permitida por sessão.
 
 As capturas ficam em memória até você salvar ou copiar; o aplicativo não envia imagens para servidores. Copiar utiliza a área de transferência do Windows, cujas configurações de histórico e sincronização são controladas pelo sistema.
 
