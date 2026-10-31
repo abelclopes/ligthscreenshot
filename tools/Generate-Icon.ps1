@@ -3,7 +3,7 @@ $assetDirectory = Join-Path (Split-Path $PSScriptRoot -Parent) 'Assets'
 [System.IO.Directory]::CreateDirectory($assetDirectory) | Out-Null
 $sizes = @(16, 20, 24, 32, 48, 64, 128, 256)
 $images = @()
-foreach ($size in $sizes) {
+foreach ($size in @($sizes + 1024)) {
     $bitmap = New-Object System.Drawing.Bitmap($size, $size)
     $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
     $graphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
@@ -34,8 +34,8 @@ foreach ($size in $sizes) {
         [System.Drawing.PointF]::new(136,111)))
     $stream = New-Object System.IO.MemoryStream
     $bitmap.Save($stream, [System.Drawing.Imaging.ImageFormat]::Png)
-    $images += ,($stream.ToArray())
-    if ($size -eq 256) { $bitmap.Save((Join-Path $assetDirectory 'MinhaCaptura.png'), [System.Drawing.Imaging.ImageFormat]::Png) }
+    if ($size -le 256) { $images += ,($stream.ToArray()) }
+    if ($size -eq 1024) { $bitmap.Save((Join-Path $assetDirectory 'MinhaCaptura.png'), [System.Drawing.Imaging.ImageFormat]::Png) }
     $stream.Dispose()
     $pen.Dispose()
     $shape.Dispose()
