@@ -8,7 +8,7 @@ A edição multiplataforma **0.2.0 (prévia)** fica em [`desktop/`](desktop/READ
 
 Aplicativo Windows em C# / .NET 10, sem pacotes externos e sem chamadas de rede no código do aplicativo.
 
-![Ícone](Assets/MinhaCaptura.png)
+<img src="Assets/MinhaCaptura.png" alt="Ícone do ligthscreenshot" width="128" height="128">
 
 Versão **0.1.0**, experimental. Projeto independente, sem vínculo com o Lightshot.
 
