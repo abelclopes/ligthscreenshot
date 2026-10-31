@@ -10,6 +10,7 @@
     <Authors>Minha Captura contributors</Authors>
     <Description>Captura de tela local para Windows com anotações e atalho configurável.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <DefaultItemExcludes>$(DefaultItemExcludes);desktop/**;.npm-cache/**;.dotnet/**;artifacts/**;docs/**</DefaultItemExcludes>
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="Assets\MinhaCaptura.ico" LogicalName="MinhaCaptura.AppIcon" />
