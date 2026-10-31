@@ -1,0 +1,41 @@
+{
+  "name": "ligthscreenshot",
+  "version": "0.2.0",
+  "description": "Captura de tela local com anotações para Windows, Linux e macOS",
+  "author": "Abel Lopes <abellopes@gmail.com>",
+  "license": "MIT",
+  "main": "main.cjs",
+  "desktopName": "io.github.abelclopes.ligthscreenshot.desktop",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test test/*.test.cjs",
+    "smoke": "electron . --smoke-test",
+    "dist": "electron-builder --publish never"
+  },
+  "devDependencies": {
+    "electron": "45.2.1",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "io.github.abelclopes.ligthscreenshot",
+    "productName": "ligthscreenshot",
+    "artifactName": "ligthscreenshot-v${version}-${os}-${arch}.${ext}",
+    "directories": { "output": "dist" },
+    "files": ["*.cjs", "ui/**/*", "assets/**/*", "LICENSE"],
+    "mac": {
+      "icon": "assets/icon.png",
+      "category": "public.app-category.productivity",
+      "target": ["zip", "dmg"],
+      "identity": null,
+      "extendInfo": { "NSScreenCaptureUsageDescription": "Selecione uma área da tela para anotar e salvar localmente." }
+    },
+    "linux": {
+      "executableName": "io.github.abelclopes.ligthscreenshot",
+      "target": ["AppImage", "deb", "tar.gz"],
+      "category": "Graphics",
+      "icon": "assets/icon.png",
+      "desktop": { "entry": { "StartupWMClass": "ligthscreenshot" } }
+    },
+    "win": { "target": ["portable"], "icon": "assets/icon.ico" }
+  }
+}

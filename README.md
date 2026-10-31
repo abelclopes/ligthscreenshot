@@ -2,6 +2,10 @@
 
 [Página do projeto](https://abelclopes.github.io/ligthscreenshot/)
 
+## Edição Linux e macOS
+
+A edição multiplataforma **0.2.0 (prévia)** fica em [`desktop/`](desktop/README.md), com interface Electron para Windows x64, Linux x64 e macOS Intel / Apple Silicon. O workflow **Desktop multiplataforma** gera os pacotes e executa testes em cada sistema. Consulte as instruções e limitações de permissões e Wayland antes de usar. A versão Windows Forms 0.1.0 descrita abaixo continua disponível.
+
 Aplicativo Windows em C# / .NET 10, sem pacotes externos e sem chamadas de rede no código do aplicativo.
 
 ![Ícone](Assets/MinhaCaptura.png)

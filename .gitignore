@@ -16,3 +16,6 @@ TestResults/
 *.p12
 Thumbs.db
 Desktop.ini
+node_modules/
+desktop/dist/
+.npm-cache/

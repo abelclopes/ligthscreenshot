@@ -1,5 +1,14 @@
 # Histórico de versões
 
+## 0.2.0 — prévia multiplataforma
+
+- Edição Electron separada em `desktop/`, para Windows x64, Linux x64, macOS Intel e Apple Silicon.
+- Bandeja, captura de tela, seleção de área na imagem, anotações e copiar/salvar PNG.
+- Atalho configurável e preferências locais independentes da edição Windows Forms.
+- Testes de recorte, anotação, desfazer, exportação PNG e persistência.
+- Workflow com compilação, teste gráfico e empacotamento nos sistemas de destino.
+- Integrações de captura, permissões e atalhos ainda exigem validação manual em cada desktop.
+
 ## 0.1.0 — 2026-10-31
 
 Primeira versão pública, experimental, para Windows.

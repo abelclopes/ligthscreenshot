@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>ligthscreenshot</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><img src="../assets/icon.png" alt="" width="32" height="32"><strong>ligthscreenshot</strong><button id="capture">Nova captura</button><button id="settings">Configurações</button><button id="quit">Sair</button></header>
+  <main>
+    <div id="welcome"><h1>Capture. Anote. Salve.</h1><p>Inicie uma captura pelo botão acima, pelo menu da bandeja ou pelo seu atalho.</p><p>A imagem permanece local. Após capturar, arraste sobre a imagem para selecionar a área.</p></div>
+    <div id="sources" aria-label="Escolher tela"></div>
+    <div id="toolbar" hidden>
+      <label>Ferramenta <select id="tool"><option value="crop">Selecionar área</option><option value="arrow">Seta</option><option value="rectangle">Retângulo</option><option value="pen">Caneta</option><option value="text">Texto</option></select></label>
+      <label>Cor <input id="color" type="color" value="#ff3333"></label>
+      <label>Espessura <input id="width" type="number" min="1" max="30" value="3"></label>
+      <label>Texto <input id="text" placeholder="Digite sua anotação" maxlength="500"></label>
+      <button id="undo">Desfazer</button><button id="copy">Copiar</button><button id="save">Salvar PNG</button>
+    </div>
+    <div id="viewport"><canvas id="canvas" hidden aria-label="Imagem capturada; arraste para selecionar ou desenhar"></canvas></div>
+  </main>
+  <footer><span id="status" role="status">Carregando preferências…</span><span>v0.2.0 · prévia multiplataforma</span></footer>
+  <dialog id="preferences"><form method="dialog" id="settings-form"><h2>Atalho de captura</h2><p>Escolha uma tecla e os modificadores.</p><div id="modifiers"><label><input type="checkbox" value="Control">Ctrl</label><label><input type="checkbox" value="Alt">Alt / Option</label><label><input type="checkbox" value="Shift">Shift</label><label><input type="checkbox" value="Super">Win / Command</label></div><label>Tecla <select id="key"></select></label><p id="platform-note"></p><p id="settings-error" role="alert"></p><div class="actions"><button type="button" id="default">Restaurar padrão</button><button type="button" id="cancel">Cancelar</button><button type="submit">Salvar</button></div></form></dialog>
+  <script src="editor.js"></script>
+</body></html>
