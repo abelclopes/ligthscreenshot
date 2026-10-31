@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationIcon>Assets\MinhaCaptura.ico</ApplicationIcon>
+    <Version>0.1.0</Version>
+    <Authors>Minha Captura contributors</Authors>
+    <Description>Captura de tela local para Windows com anotações e atalho configurável.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\MinhaCaptura.ico" LogicalName="MinhaCaptura.AppIcon" />
+  </ItemGroup>
+</Project>
