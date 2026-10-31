@@ -1,5 +1,7 @@
 # ligthscreenshot
 
+[Página do projeto](https://abelclopes.github.io/ligthscreenshot/)
+
 Aplicativo Windows em C# / .NET 10, sem pacotes externos e sem chamadas de rede no código do aplicativo.
 
 ![Ícone](Assets/MinhaCaptura.png)
